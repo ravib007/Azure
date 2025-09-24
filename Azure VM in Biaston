@@ -1,0 +1,60 @@
+## Azure  steps by VM Creation
+Login to Azure portal console
+search the VM- Select and create a VM
+
+
+Project details : Subscription --> Azure Subscription
+Resources group : Development
+Instance details
+VM Name : Develop
+Region: Central India
+Availability zone : AZ
+Zone options : Self selected zone
+Availability zone : Zone 2, Zone 3
+Security groups : Trusted launch VM
+Image : select OS type : Ubuntu, Windows, Linux, Redhat
+vm architecture : X64
+Size : Default
+Administrator account
+Authentication type : SSH public key
+username : azureuser
+SSH public key source : generate a new key pair
+SSH key type : RSA SSH format
+keypair name : develop
+inbound port rules
+     Public inbound ports : allow selected ports
+     select inbound ports : SSH 22
+
+Disk details : default
+Networking :default
+Management : default 
+Monitoring : default
+advanced: default
+tags : default
+review and create 
+click create
+
+
+Azure connect Biaston
+1. networking --> network settings --> create --> port rule--> inbound rule--> 
+Destination port : 80
+Name : HTTP
+Click : add
+
+2. select VM --> connect --> via Bastian -->
+Authentication type: SSH private key from local file
+username : azureuser
+local file: pem file upload 
+Open in new window : option not selected
+
+Click connect: Terminal
+
+sudo -i or sudo su
+apt-get update
+apt-get install apache2
+systemctl enable apache2
+systemctl service apache2
+systemctl status apache2
+
+
+
