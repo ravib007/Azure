@@ -1,0 +1,81 @@
+## Azure  steps by VM Creation
+Login to Azure portal console
+search the VM- Select and create a VM
+
+
+Project details : Subscription --> Azure Subscription
+Resources group : Development
+Instance details
+VM Name : Develop
+Region: Central India
+Availability zone : AZ
+Zone options : Self selected zone
+Availability zone : Zone 2, Zone 3
+Security groups : Trusted launch VM
+Image : select OS type : select ubuntu (Ubuntu, Windows, Linux, Redhat)
+vm architecture : X64
+Size : Default
+Administrator account
+Authentication type : SSH public key
+username : azureuser
+SSH public key source : generate a new key pair
+SSH key type : RSA SSH format
+keypair name : develop
+inbound port rules
+     Public inbound ports : allow selected ports
+     select inbound ports : SSH 22
+
+Disk details : default
+Networking :default
+Management : default 
+Monitoring : default
+advanced: default
+tags : default
+review and create 
+click create
+VM created successfully.
+
+Putty gen :
+search putty gen --> click conversion --> import key --> Upload download file (test.pem) --> save private key (test.ppk)
+
+putty:
+Host name /ip : 40.81.213.217
+username :azureuser
+password : upload file
+
+
+click appearance : change -->
+font : courier new
+font style : bold
+Size : 16 --> click ok
+click connection : set 240 seconds
+click SSH --> ssh-->Auth--> credentials--> browse file--> test.ppk --> open ok--> accept
+
+open a terminal window:
+Loginuser :azureuser
+--> sudo i or sudo su
+
+vi files.sh
+
+click insert :
+
+# Install apache2 server
+apt-get update
+apt-get install apache2
+systemctl enable apache2
+systemctl start apache2
+systemctl status apache2
+echo "Welcome to Azure world!, Application installed successfully
+
+click escape: wq!
+terminal:
+        ls
+        chmod +X files.sh
+        ls
+        ./files.sh
+        click yes
+
+hit the ip address in browser : 40.81.2430.217
+
+Results : in browser
+
