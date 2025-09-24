@@ -12,7 +12,7 @@ Availability zone : AZ
 Zone options : Self selected zone
 Availability zone : Zone 2, Zone 3
 Security groups : Trusted launch VM
-Image : select OS type : Ubuntu, Windows, Linux, Redhat
+Image : select OS type : select ubuntu (Ubuntu, Windows, Linux, Redhat)
 vm architecture : X64
 Size : Default
 Administrator account
